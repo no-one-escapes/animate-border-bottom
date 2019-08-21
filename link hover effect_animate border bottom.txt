@@ -1,0 +1,43 @@
+-----html-----
+
+<ul>
+    <li><a class="cool-link" href="#">A cool link</a></li>
+    <li><a class="cool-link" href="#">A cool link</a></li>
+    <li><a class="cool-link" href="#">A cool link</a></li>
+</ul>
+
+<a class="cool-link" href="http://youtu.be/t9nQDdrPgZ0">Check out the associated YouTube Screencast!</a>
+
+
+-----css-----
+
+li {
+    margin-bottom: 10px;
+}
+
+.cool-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    position:relative;
+}
+
+.cool-link::after {
+    position: absolute;
+    bottom:0;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+    right:0;
+    left: initial;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    right:initial;
+    left: 0;
+    //transition: width .3s;
+}
